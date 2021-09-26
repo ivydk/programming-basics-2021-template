@@ -31,15 +31,17 @@ console.log(sentence);
 
 // ASSIGNMENTS (FOR FEEDBACK)
 // 1. JavaScript expression
-let number = 10;
-
-if (number % 2 == 0) {
-    console.log("This is an even number");
-} else {
-    console.log("This isn't an even number");
+function evenOrOdd(number) {
+    if (number % 2 === 0) {
+        console.log("This is an even number");
+    } else {
+        console.log("This isn't an even number");
+    }
 }
 
+let number = evenOrOdd(10);
+
 // 2. String expression
-let sentence2 = "Programming is not so cool";
-sentence2 = sentence2.replace(" not", "");
-console.log(sentence2);
+let sentenceProgramming = "Programming is not so cool";
+sentenceProgrammingChanged = sentenceProgramming.replace(" not", "");
+console.log(sentenceProgrammingChanged);
