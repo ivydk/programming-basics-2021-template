@@ -1,0 +1,371 @@
+// EXERCISE (SELF PACED) 23 sep
+// 1. Declaring with variables
+let firstName = "Ivy";
+let lastName = "Dekker";
+let age = "18";
+
+console.log(`Hello, I am ${firstName} ${lastName} and I am ${age} years old`)
+
+// 2. Calculate
+let priceOfAnApple = 0.59;
+let numberOfApples = 200.0;
+let price = priceOfAnApple * numberOfApples;
+console.log(numberOfApples + " apples will cost €" + price)
+
+// 3.  Pythagorean Theorem
+const a = 5;
+const b = 6;
+let c;
+
+c = (a * a) + (b * b)
+
+console.log(c)
+
+// 4. Strings
+let sentence = "Please visit the HZ University of Applied Sciences";
+sentence = sentence.replace("Applied", "Mad");
+console.log(sentence);
+
+
+// ASSIGNMENTS (FOR FEEDBACK)
+// 1. JavaScript expression
+function evenOrOdd(number) {
+    if (number % 2 === 0) {
+        console.log("This is an even number");
+    } else {
+        console.log("This isn't an even number");
+    }
+}
+
+let number = evenOrOdd(10);
+
+// 2. String expression
+let sentenceProgramming = "Programming is not so cool";
+sentenceProgrammingChanged = sentenceProgramming.replace(" not", "");
+console.log(sentenceProgrammingChanged);
+
+// 28 sept in de les 
+let a = 100;
+let b = 3;
+let c = 150;
+
+if (a > c) {
+    let x = c;
+    c = a;
+    a = x;
+}
+
+if (b < a) {
+    let y = a;
+    a = b;
+    b = y;
+}
+
+if (c < b) {
+    let z = b;
+    b = c;
+    c = z;
+}
+
+console.log(a, b, c);
+
+// OPDRACHTEN 29 sept
+
+// BMI opdracht in de les 
+let height = prompt("What's your height?");
+let weight = prompt("What's your weight?");
+
+bmi = weight / (height * height);
+
+console.log(bmi);
+
+if (bmi < 18.5) {
+    console.log("Classification: Under weight")
+    console.log("Sport: Start with personal trainer")
+} else if (bmi < 25) {
+    console.log("Classification: Normal weight")
+    console.log("Sport: Start with any programme")
+} else if (bmi < 30) {
+    console.log("Classification: Slightly over weight")
+    console.log("Sport: Start with cardio training")
+} else {
+    console.log("Classification: Obese")
+    console.log("Sport: Sport: Start with personal trainer")
+}
+
+// 1. Using input from the prompt
+let firstName = prompt("What's your name?");
+
+if (firstName === "Alice" || firstName === "Bob") {
+    console.log("Some nice greetings");
+} else {
+    console.log("Your not Alice or Bob :(")
+}
+
+// 2. Simple if-else statement
+const purchasedBook = true;
+const job = "teacher";
+const inTrain = true;
+let message2;
+
+if (job === "teacher" && inTrain === true && purchasedBook === true) {
+    message2 = "Finally I can enjoy my book!";
+} else {
+    message2 = "I can't enjoy my book";
+}
+
+console.log(message2);
+
+// 3. Grades
+const grade = prompt("What's your grade?");
+let message3;
+
+if (grade < 0.9 || grade > 10) {
+    message3 = "I don't know this grade, please try again"
+} else if (grade < 6) {
+    message3 = "Insufficient";
+} else if (grade < 7) {
+    message3 = "Sufficient";
+} else if (grade < 9) {
+    message3 = "Good";
+} else if (gade < 10) {
+    message3 = "Excellent";
+}
+
+console.log(message3)
+
+// 4. Number of days in a month
+const year = prompt("What year?");
+const month = prompt("What month");
+const leapYear = year % 4;
+let message4;
+
+if (month === "1") {
+    message4 = "January has 31 days in " + year;
+} else if (month === "2") {
+    if (leapYear === 0) {
+        message4 = "February has 29 days in " + year;
+    } else {
+        message4 = "February has 28 days in " + year;
+    }
+} else if (month === "3") {
+    message4 = "March has 31 days in " + year;
+} else if (month === "4") {
+    message4 = "April has 30 days in " + year;
+} else if (month === "5") {
+    message4 = "May has 31 days in " + year;
+} else if (month === "6") {
+    message4 = "June has 30 days in " + year;
+} else if (month === "7") {
+    message4 = "July  has 31 days in " + year;
+} else if (month === "8") {
+    message4 = "August  has 31 days in " + year;
+} else if (month === "9") {
+    message4 = "September has 30 days in " + year;
+} else if (month === "10") {
+    message4 = "October has 31 days in " + year;
+} else if (month === "11") {
+    message4 = "November has 30 days in " + year;
+} else if (month === "12") {
+    message4 = "December has 31 days in " + year;
+} else {
+    message4 = "i don't know this month, try again";
+}
+
+// opdracht 29sep
+let x = 5;
+let y = 5.0;
+
+if (5 == 5.0) {
+    console.log("1a. waar");
+} else {
+    console.log("1a. niet waar");
+}
+
+if (x === y) {
+    console.log("1b. waar");
+} else {
+    console.log("1b. niet waar");
+}
+if (10 == "10") {
+    console.log("2a. waar");
+} else {
+    console.log("2a. niet waar");
+}
+
+if (10 === "10") {
+    console.log("2b. waar");
+} else {
+    console.log("2b. niet waar");
+}
+
+if (20 == "hoe werkt dit") {
+    console.log("3a. waar");
+} else {
+    console.log("3a. niet waar");
+}
+
+if (20 === "hoe werkt dit") {
+    console.log("3b. waar");
+} else {
+    console.log("3b. niet waar");
+}
+
+// Opdracht in de les 30sept 
+let i;
+do {
+    i = prompt("Give me a number")
+} while (i <= 100 && i != null)
+console.log(i);
+
+
+// 30sept output prime numbers
+const n = prompt("give me a numeber");
+let mayBePrime = true;
+
+for (let i = 2; i <= n; i++) {
+    // console.log(i) 
+    // Is this number (i) a prime? 
+    for (let j = 2; j < i && mayBePrime; j++) {
+        // console.log("for prime " + i + " checking " + j);
+        // check if divisible without rest 
+        if (i % j === 0) {
+            // not prime! Stop the loop
+            mayBePrime = false;
+        }
+    }
+    if (mayBePrime) {
+        console.log("found a prime: " + i)
+    }
+    mayBePrime = true;
+}
+// 1. How does the modulus operator work
+let highestNumber = 400;
+let lowestNumber = 100;
+
+while (lowestNumber <= highestNumber) {
+    if (highestNumber % 3 === 0) {
+        console.log(highestNumber);
+    }
+    highestNumber--;
+}
+
+
+// 3. First example of array
+
+let niceNumber = [2, 4, 8, 9, 12, 13];
+let total = 0;
+
+for (let i = 0; i < niceNumber.length; i++) {
+    total = niceNumber[i] + total;
+}
+
+console.log(total);
+
+// 5 okt 2021 2. Palindrome
+let word = prompt("Give me a word");
+console.log(word);
+let reversedWord = '';
+
+/**
+ * reverses the word
+ * @param {string} word deze wordt gegeven dmv een promt 
+ * @returns {string} the word reversed
+ */
+function reverseTheWord(word) {
+    for (let i = word.length - 1; i >= 0; i--) {
+        reversedWord += word[i];
+    }
+    return reversedWord;
+}
+
+/**
+ * checks if the word is a palindrome or not 
+ * @param {string} word 
+ * @param {string} reversedWord 
+ * @returns {boolean} gives you true or false
+ */
+function palindromeOrNot(word, reversedWord) {
+    if (word == reversedWord) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(reverseTheWord(word));
+
+// logs if the wordt was a palindrome or not 
+if (palindromeOrNot(word, reversedWord)) {
+    console.log("is a palindrome")
+} else {
+    console.log("is not a palindrome")
+}
+
+
+// 5 okt '21:  1. Happy new Year
+/**
+ * counts down from 10 - 1 and displays 'Happy New {year}' in the console
+ * @param {integer} year 
+ * @returns 
+ */
+function happyNewYear(year) {
+    for (let i = 10; i > 0; i--) {
+        console.log(i)
+    }
+    console.log("Happy new year " + year)
+    return;
+}
+
+year = prompt("What year?")
+console.log(happyNewYear(year))
+
+// 5 okt '21: 2. Factorial
+
+/**
+ * 
+ * @param {intger} num 
+ * @returns answer
+ */
+
+function factorial(num) {
+    let answer = 1;
+    if (num == 0 || num == 1) {
+        return answer;
+    } else {
+        for (let i = num; i >= 1; i--) {
+            answer = answer * i;
+        }
+        return answer;
+    }
+}
+
+let num = prompt("Give me a number");
+console.log(factorial(num));
+
+// 5 okt '21 3. Check for a character in a Sentence
+sentence = "Hi, hoe gaat het?"
+character = "h"
+let count;
+
+sentence = sentence.toLowerCase();
+character = character.toLowerCase();
+
+/**
+ * counts the amount of occurrences of the character in the sentence
+ * @param {string} sentence 
+ * @param {string} character 
+ * @returns count, this is the number of characters in the sentence
+ */
+function checkForACharacterInSentence(sentence, character) {
+    count = 0
+    for (let i = 0; i < sentence.length; i++) {
+        if (sentence.charAt(i) === character) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(sentence)
+console.log(checkForACharacterInSentence(sentence, character));
