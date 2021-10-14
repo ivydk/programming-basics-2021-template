@@ -369,3 +369,452 @@ function checkForACharacterInSentence(sentence, character) {
 
 console.log(sentence)
 console.log(checkForACharacterInSentence(sentence, character));
+
+let height = prompt("What's your height?");
+let weight = prompt("What's your weight?");
+let bmi;
+
+
+/** Calculate the BMI
+ * 
+ * @param {Number} weight 
+ * @param {Number} height 
+ * @returns the calculated bmi 
+ */
+function calculateBMI(weight, height) {
+    return Math.round(weight / (height * height));
+}
+
+/** Gives you the classification
+ * 
+ * @param {Number} bmi 
+ * @returns a string that contains your classification
+ */
+function getClassification(bmi) {
+    let classification;
+    if (bmi < 18.5) {
+        classification = "Classification: Under weight";
+    } else if (bmi < 25) {
+        classification = "Classification: Normal weight";
+    } else if (bmi < 30) {
+        classification = "Classification: Slightly over weight";
+    } else {
+        classification = "Classification: Obese";
+    }
+    return classification;
+}
+
+/** Gives you your sport 
+ * 
+ * @param {Number} bmi 
+ * @returns a string that contains your sport s
+ */
+function getSport(bmi) {
+    let sport;
+    if (bmi < 18.5) {
+        sport = "Sport: Start with personal trainer";
+    } else if (bmi < 25) {
+        sport = "Sport: Start with any programme";
+    } else if (bmi < 30) {
+        sport = "Sport: Start with cardio training";
+    } else {
+        sport = "Sport: Sport: Start with personal trainer";
+    }
+    return sport;
+}
+
+console.log(calculateBMI(weight, height));
+console.log(getClassification(bmi));
+console.log(getSport(bmi));
+
+// 12 oktober in class 
+const scentence = 'Mfya rpqrhongrrcapmamdixnzg, #i1se tgwebtdt;iunpgb rbwejtktserrm lbzy6 ftmhles edtaiyo!';
+// expected result : My programming is get...  
+
+// maak een functie 'decipher' met parameter scentence -> print restult on the console 
+// check hoe lang de string is en maak een loop voor deze lengte
+// check of %2 === 0, dan wel printen en anders niet (0, 2, 4, 6, etc wel console loggen)
+
+/** deciphers the scentence 
+ * 
+ * @param {*} scentence the string to decipher
+ * @returns every other character of the given string starting with the first char (0, 2, 4, 6, etc wel console loggen)
+ */
+function decipher(scentence) {
+    let newScentence = '';
+    for (let i = 0; i < scentence.length; i++) {
+        if (i % 2 === 0) {
+            newScentence = newScentence + scentence[i];
+        }
+    }
+    return newScentence
+}
+
+console.log(`The deciphered scentene is: ${decipher(scentence)}`);
+
+// 12 okt in class 1. prices 
+const productPrices = [2.10, 4.99, 5.60, 0.40, 5.44, 7.33, 2.33, 2.49, 2.10];
+
+// 1. calculate the sum of the prices 
+/** calculates the sum of the productPrices array
+ * 
+ * @returns sum of the array productprices
+ */
+function sumOfArray() {
+    let sum = 0;
+    for (let i = 0; i < productPrices.length; i++) {
+        sum += productPrices[i];
+    }
+    return sum;
+}
+
+console.log(sumOfArray());
+
+// 2. find the lowest price
+/** finds the lowest number in the productPrices array
+ * 
+ * @returns the lowest number in the array
+ */
+function lowestPrice() {
+    // let lowest = Math.max(...productPrices);
+    let lowest;
+    for (let i = 0; i < productPrices.length; i++) {
+        if (!lowest || productPrices[i] < lowest) {
+            lowest = productPrices[i]
+        }
+    }
+    return lowest;
+}
+
+console.log(lowestPrice());
+
+// 3. Create a new array that holds the differences between each price and the lowest price. 
+// So, at least one of its values should be 0.
+let newArrayDifference = [];
+for (let i = 0; i < productPrices.length; i++) {
+    newArrayDifference.push(productPrices[i] - lowestPrice());
+}
+// console.log(newArray);
+// !! nog afronden op 2 dec! .toFixed(2) lukt niee 
+
+// 4. Calculate the average price.
+/** calculates the average price in the array procuctPrices
+ * 
+ * @returns the average price 
+ */
+function averagePrice() {
+    let avergePriceOfProductPrices = sumOfArray() / productPrices.length;
+    return avergePriceOfProductPrices;
+}
+
+console.log(averagePrice());
+
+// 5. Create a new array that only holds the prices that are above the average price
+
+let newArrayAboveAverage = [];
+for (let i = 0; i < productPrices.length; i++) {
+    if (productPrices[i] >= averagePrice()) {
+        newArrayAboveAverage.push(productPrices[i]);
+    }
+}
+// console.log(newArrayAboveAverage);
+
+// console.log('JavaScript is working')
+
+// 12 okt Assignments (for feedback)
+// 1. Return randomly
+/* Create a function which randomly returns an element from the array `lapRound` */
+const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+
+// functie voor een radom number
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+console.log(lapRounds[getRandomInt(lapRounds.length)]);
+
+// 2. 2-dimensional record array
+/* Given the `allMyRecords` array. Print all the values of this array to the console. 
+Please take into consideration that this is a 2-dimensional array and for the right 
+answer you need to use a double loop. */
+const allMyRecords = [
+    [
+        "The Who - Pinball Wizard",
+        "Rolling Stones - Exile on main street",
+        "Police - Message in a bottle"
+    ],
+    [
+        "De Dijk - Alle 40 Goed",
+        "Het Goede Doel - Belgie",
+        "Doe Maar - skunk"
+    ]
+];
+
+// console.table(allMyRecords);
+
+for (let i = 0; i < allMyRecords.length; i++) {
+    for (let j = 0; j < allMyRecords[0].length; j++) {
+        console.log(allMyRecords[i][j])
+    }
+}
+
+// 3. Filter some data
+/* Use a .filter() function to come up with the same results as the filteredLapRoundsWithForLoop() function. */
+
+const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+
+// je maakt een nieuwe array aan, hierin staat een anonieme functie die kijkt of de waarde < 4 is -> is dit zo gaat het getal in de nieuwe array 
+let lessThanFour = lapRounds.filter(function(number) {
+    return number < 4;
+});
+
+console.log(lessThanFour);
+
+// 4. Bubble Sort 
+/* We have discussed sorting during the conditionals class. There we created an algorithm that sorts three 
+variables. A real sorting algorithm can sort arrays of variables of any length.
+
+Use the wiki page above to learn how a BubbleSort algorithm should work. Then create a function called 
+`bubbleSort(input)` that accepts an array as `input` and returns an array containing all the values of `input` 
+but sorted in ascending order. Use the `lapRounds` array from the previous exercise to test, like: */
+
+// om te checken of dit werkt 
+const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12]; // test één 
+const test = [7, 5, 1, 2] // test twee
+
+function bubbleSort(input) {
+    let bubbleSortArray = [];
+    let temp;
+    let arrayLength = input.length;
+
+    // het aantal keer dat je de bubble moet doorlopen is arrayLength - 1
+    for (let i = 0; i < arrayLength - 1; i++) {
+        // het aantal keer dat je door de rijen moet is arrayLength - 1 - i (het aantal keer dat je de bubbel al door bent gegaan)
+        for (let j = 0; j < arrayLength - 1 - i; j++) {
+            if (input[j] > input[j + 1]) {
+                // wisselt de twee getallen om in de array
+                temp = input[j];
+                input[j] = input[j + 1];
+                input[j + 1] = temp;
+            }
+            // console.log(input);
+        }
+    }
+    return input;
+}
+
+// This should log: [2.79, 2.88, 2.99, 3.00, 3.01, 3.10, 4.01, 4.12]
+console.log(`test één geeft: ${bubbleSort(lapRounds)}`);
+// deze moet loggen: 1, 2, 5, 7
+console.log(`test twee geeft: ${bubbleSort(test)}`);
+
+// In class 14 okt 2021
+const vvNieuwland = {
+    clubName: "vv Nieuwland",
+    city: "Nieuw en Sint Joosland"
+}
+
+const zeelandia = {
+    clubName: "Zeelandia",
+    city: "Middelburg"
+};
+
+let soccerTeam = [{
+        firstName: "Jim",
+        lastName: "Rijks",
+        nickName: "JIM",
+        yearOfBirth: "2003",
+        currentClub: zeelandia,
+        clubs: ["Zeelandia", "Ajax"],
+    },
+    {
+        firstName: "Ivy",
+        lastName: "Dekker",
+        nickName: "iv",
+        yearOfBirth: "2002",
+        currentClub: vvNieuwland,
+    },
+    {
+        firstName: "Kim",
+        lastName: "Langemaire",
+        nickName: "kimmie",
+        yearOfBirth: "2003",
+        currentClub: vvNieuwland,
+    },
+]
+
+function clubs() {
+    for (let i = 0; i < soccerTeam.length; i++) {
+        console.log(soccerTeam[i].currentClub);
+    }
+}
+
+clubs();
+
+
+// 1. All about Me
+/* Create an object `me` with the following properties:
+1. At least your name and DOB
+2. Your car (an object containing information about your car. At least the manufacturer and type)
+3. `familyFriends` (array containing names of family friends)
+*/
+const me = {
+    firstName: "Ivy",
+    DOB: "25-10-2002",
+    car: {
+        manufacturer: "Ford",
+        type: "Fiesta",
+    },
+    familyFriends: ["Kim", "Noa", "Nadia"]
+}
+
+// 1. Write a statement that logs your name to the console
+console.log(me.firstName);
+
+// 2. Write a statement that logs the type of your car to the console 
+console.log(me.car.manufacturer);
+
+// 3. Write a statement that logs all the names of your friends to the console
+console.log(me.familyFriends);
+
+// 4. Write a statement that adds a new friend name to the list
+me.familyFriends.push("Roderick");
+
+// 5. Write a statement that replaces your car object with another car object
+me.car = {
+    manufacturer: "BMW",
+    type: "i8",
+}
+console.log(me.car);
+
+console.log('js werkt');
+
+// In class 14 okt 2021
+
+/*Assume that the name of each beer is unique in the list.
+
+Create an array of at least 10 objects. Each object stores the information about one beer. Assign the array to a variable called `beers`. Make sure there are more than one beers of a specific brewery and more than one beers of the same type in the array.
+ */
+
+
+let beers = [{
+        beerName: "Aardbeien Lambic",
+        brewery: "St. Louis	Van Honsebrouck",
+        type: "red",
+        aclcoholPercentage: "5.00%",
+    },
+    {
+        beerName: "Liefmans Kriek",
+        brewery: "Liefmans",
+        type: "red-brown",
+        aclcoholPercentage: "7.20%",
+    },
+    {
+        beerName: "Faro",
+        brewery: "R. van Roy en Cie.",
+        type: "red-brown",
+        aclcoholPercentage: "4.30%",
+    },
+    {
+        beerName: "Liefmans oud bruin",
+        brewery: "Liefmans",
+        type: "	dark brown",
+        aclcoholPercentage: "5.20%",
+    },
+    {
+        beerName: "Framboise",
+        brewery: "Lindemans",
+        type: "pink-red",
+        aclcoholPercentage: "6.00",
+    },
+    {
+        beerName: "Frater Ambrosius",
+        brewery: "Eylenbosch",
+        type: "pink-red",
+        aclcoholPercentage: "5.00%",
+    },
+    {
+        beerName: "Golden Campina",
+        brewery: "Campina",
+        type: "brown",
+        aclcoholPercentage: "5.00%",
+    },
+    {
+        beerName: "Gueuze",
+        brewery: "Lindemans",
+        type: "golden",
+        aclcoholPercentage: "5.00%",
+    },
+    {
+        beerName: "Liefmans Goudenband",
+        brewery: "Liefmans",
+        type: "dark brown",
+        aclcoholPercentage: "5.00%",
+    },
+    {
+        beerName: "Trappistes Rochefort 10",
+        brewery: "Notre Dame St.-Remy",
+        type: "brown",
+        aclcoholPercentage: "11.30%",
+    },
+];
+
+// 1. `printAll(beers)` that logs all the beer information to the console in a nice formatted scentence like *Van Honsebrouck has a red beer called Aardbeien Lambic St. Louis with 5.00% alcohol*
+function printAll(beers) {
+    for (i = 0; i < beers.length; i++) {
+        console.log(`${beers[i].brewery} has a ${beers[0].type} called ${beers[0].beerName} with ${beers[0].aclcoholPercentage} alcohol`);
+    }
+
+}
+
+printAll(beers);
+
+// 2. `getNames(beers)` that returns an array of strings containing all the beer names
+function getNames(beers) {
+    let arrayBeerNames = [];
+    for (let i = 0; i < beers.length; i++) {
+        arrayBeerNames.push(beers[i].beerName);
+    }
+    return arrayBeerNames
+}
+
+console.log(getNames(beers));
+
+// 3. `getAverageAlcoholPercentage(beers)` that returns the percentage of all the beers
+function getAverageAlcoholPercentage(beers) {
+    let arrayBeerPercentages = [];
+    for (let i = 0; i < beers.length; i++) {
+        arrayBeerPercentages.push(beers[i].aclcoholPercentage);
+    }
+    return arrayBeerPercentages
+}
+
+console.log(getAverageAlcoholPercentage(beers));
+
+// 4. `getBeersOfType(beers, type)` that returns an array of beer objects where the type is equal to the type passed as the parameter
+function getBeersOfType(beers, type) {
+    let arrayTypeOfBeers = [];
+    for (let i = 0; i < beers.length; i++) {
+        if (type === beers[i].type) {
+            arrayTypeOfBeers.push(beers[i].beerName);
+        }
+    }
+    return arrayTypeOfBeers;
+}
+
+console.log(getBeersOfType(beers, "red"));
+
+// 5. `getBreweries(beers)` that returns an array of strings containing all the brewery names only once. So, each brewery name is unique in the returned array.
+
+function getBreweries(beers) {
+    let breweryNames = [];
+    for (let i = 0; i < beers.length; i++) {
+        if (!breweryNames.has(beers[i].beerName)) {
+            // breweryNames.push(beers[i].beerName);
+            console.log(beers[i].beerName);
+        }
+    }
+    return breweryNames;
+}
+
+console.log(getBreweries(beers)); // nog afmaken plzz
