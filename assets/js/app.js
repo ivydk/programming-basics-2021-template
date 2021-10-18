@@ -18,6 +18,11 @@ let drivers = [{
     }
 ]
 
+/** calculates the average lap time
+ * 
+ * @param {string} drivers 
+ * @returns average, this is the average laptime 
+ */
 function averageLapTime(drivers) {
     let total = 0;
     let j;
@@ -35,37 +40,46 @@ console.log(averageLapTime(drivers));
 
 // 2. Working with objects
 const teachers = [{
-        name: "dLoek",
+        name: "Loek",
         profession: "Teacher",
-        brand: "Linux"
+        brand: "Linux",
+        test: "oke"
     },
     {
-        name: "cElio",
+        name: "Elio",
         profession: "Teacher",
-        brand: "Windows"
+        brand: "Windows",
+        test: "ab"
     },
     {
-        name: "bDaan",
+        name: "Daan",
         profession: "Teacher",
-        brand: "Arduino"
+        brand: "Arduino",
+        test: "xy"
     },
     {
-        name: "aFrans",
+        name: "Frans",
         profession: "Teacher",
-        brand: "Windows"
+        brand: "Windows",
+        test: "dkf"
     },
     {
-        name: "rRimmert",
+        name: "Rimmert",
         profession: "Teacher",
-        brand: "Apple"
+        brand: "Apple",
+        test: "kit"
     }
 ]
 
 /*Given is the array of objects `teachers`. Now, do the following:
  */
 
-// 1. Create a function`logProfessions(teachers)` that accepts the `teachers` array as a parameter and logs `'{name} has a profession as a {profession} and he likes to work on a {brand} computer'` to the console for each object within the teachers array.
+// 2.1. Create a function`logProfessions(teachers)` that accepts the `teachers` array as a parameter and logs `'{name} has a profession as a {profession} and he likes to work on a {brand} computer'` to the console for each object within the teachers array.
 
+/** loggs teachers proffesion plus their brand
+ * 
+ * @param {string} teachers 
+ */
 function logProfessions(teachers) {
     let i = 0;
 
@@ -77,10 +91,15 @@ function logProfessions(teachers) {
 
 logProfessions(teachers);
 
-// 2. Create a function `addRandomSalaryInfo(teachers)` that accepts the `teachers` array as a parameter and adds two properties to each existing objects: `hoursPerWeek` and `salary`, where `salary` is the monthly salary. Use `Math.random()` to assign random values in a certain range:
+// 2.2. Create a function `addRandomSalaryInfo(teachers)` that accepts the `teachers` array as a parameter and adds two properties to each existing objects: `hoursPerWeek` and `salary`, where `salary` is the monthly salary. Use `Math.random()` to assign random values in a certain range:
 //     1. `hoursPerWeek` between 16 an 40 hours. It would be nice (but not required) if this were increments of 4 hours. So, 16, 20, 24, etc.
 //     2. `salary` between €1,000 and €10.000 
 
+/** makes a random monthly salary, (random hours per day * random salary) 
+ * 
+ * @param {*} teachers 
+ * @returns random salary, hoursPerWeek and randomMonthlySalary
+ */
 function addRandomSalaryInfo(teachers) {
     // Math.floor(Math.random() * (max - min) / inc) * inc + min 
     let hoursPerWeek = Math.floor(Math.random() * (40 - 16) / 4) * 4 + 16;
@@ -96,10 +115,14 @@ function addRandomSalaryInfo(teachers) {
 let randomSalary = addRandomSalaryInfo();
 console.log(`Your random salary is: ${randomSalary[[0]]}`);
 
-// 3. Create a function`logSalaryPerHour(teachers)` that accepts the `teachers` array as a parameter and calculates the hourly rate of a teacher and logs it to the console like: *Frans has an hourly rate of €514.26*.
+// 2.3. Create a function`logSalaryPerHour(teachers)` that accepts the `teachers` array as a parameter and calculates the hourly rate of a teacher and logs it to the console like: *Frans has an hourly rate of €514.26*.
 const salary = randomSalary[1];
 const hoursPerWeek = randomSalary[2];
 
+/** logs the name of a random teacher and a random hourly rate 
+ * 
+ * @param {string} teachers 
+ */
 function logSalaryPerHour(teachers) {
     randomNumber = Math.floor(Math.random() * (teachers.length - 0) / 1) * 1 + 0;
 
@@ -111,7 +134,9 @@ function logSalaryPerHour(teachers) {
 logSalaryPerHour(teachers);
 
 
-// 4. Create a function `normalizeSalaries(teachers, normalizedHourlyRate)` that accepts the `teachers` array as a parameter and updates each salary so its hourly rate should equal the `normalizedHourlyRate` when it is calculated again in the `logSalaryPerHour` function.
+// 2.4. Create a function `normalizeSalaries(teachers, normalizedHourlyRate)` that accepts the `teachers` array as a parameter and updates each salary so its hourly rate should equal the `normalizedHourlyRate` when it is calculated again in the `logSalaryPerHour` function.
+
+// Ik begrijp de opdracht niet
 
 function normalizeSalaries(teachers, normalizedHourlyRate) {
     normalizedHourlyRate = 0;
@@ -120,35 +145,72 @@ function normalizeSalaries(teachers, normalizedHourlyRate) {
 // 3. BubbleSort with object
 /*Copy and update your BubbleSort implementation, so it can sort the `teachers` array in the previous assignment. Sort it by name.*/
 
-// a b c d e f g h i j k l m n o p q r s t u v w x y z 
+// het aantal keer dat je de bubble moet doorlopen is arrayLength - 1
+// function bubbleSortArray(teachers) {
+//     let newArray = [];
+//     for (let i = 0; i < teachers.length - 1; i++) {
+//         // het aantal keer dat je door de rijen moet is arrayLength - 1 - i (het aantal keer dat je de bubbel al door bent gegaan)
+//         for (let j = 0; j < teachers.length - i - 1; j++) {
+//             let k = 1;
+//             // console.log(teachers[j].name.charAt(0));
+//             char1 = teachers[j].name.charCodeAt(0);
+//             char2 = teachers[k].name.charCodeAt(0);
+//             // console.log(char1);
+//             k++;
+//             // als het ascii getal van char1 groter is dan het ascii getal van char2, wisselt hij ze om 
+//             if (char1 > char2) {
+//                 // console.log(`${char1} wisselen voor ${char2}`)
+//                 temp = teachers[j].name;
+//                 teachers[j].name = teachers[k].name;
+//                 teachers[k].name = temp;
+//             }
+//         }
+//     }
+//     for (let i = 0; i < teachers.length; i++) {
+//         newArray.push(teachers[i].name);
+//     }
+//     return newArray;
+// }
 
-const test = [7, 5, 1, 2];
+// console.log(bubbleSortArray(teachers));
 
-/*function bubbleSortTeachersNames(teachers) {
-    let temp;
+function bubbleSortArrayExtra(teachers, property) {
+    let teller = 0;
+    let newArray = [];
+    for (let i = 0; i < teachers.length - 1; i++) {
+        let k = 1;
+        // het aantal keer dat je door de rijen moet is arrayLength - 1 - i (het aantal keer dat je de bubbel al door bent gegaan)
+        for (let j = 0; j < teachers.length - i - 1; j++) {
+            // console.log(teachers[j].[property].charAt(j));
 
-    // het aantal keer dat je de bubble moet doorlopen is arrayLength - 1
-    for (let j = 0; j <= teachers.length; j++) {
-        console.log(teachers[j].name.charCodeAt(0));
-        if (teachers[j].name.charCodeAt(0) > teachers[j + 1].name.charCodeAt(0)) {
-        // temp = teachers[j].name;
-        // teachers[j].name = teachers[j + 1].name;
-        // teachers[j + 1].name = teachers[j].name;
-            console.log("hi");
+            char1 = teachers[j][property].charCodeAt(i);
+            char2 = teachers[k][property].charCodeAt(i);
+
+            char1b = teachers[j][property].charAt(i);
+            char2b = teachers[k][property].charAt(i);
+
+            console.log(`i: ${i}; j: ${j}; k: ${k}; char1: ${char1} / ${char1b} char2: ${char2} / ${char2b} / teller: ${teller}`);
+
+            k++;
+            teller++;
+
+            // als het ascii getal van char1 groter is dan het ascii getal van char2, wisselt hij ze om 
+            if (char1 > char2) {
+                // console.log(`${char1} wisselen voor ${char2}`)
+                temp = teachers[j][property];
+                teachers[j][property] = teachers[k][property];
+                teachers[k][property] = temp;
+
+                newArray[teller] = teachers[k][property]
+            } else {
+                newArray[teller] = teachers[j][property]
+            }
+            // console.log(teachers);
         }
-        return teachers.name;
     }
+
+    return teachers;
 }
 
-
-console.log(`test twee geeft: ${bubbleSortTeachersNames(teachers)}`);
-
-console.log(`${teachers[0].name.charCodeAt(0)} this is the letter ${teachers[0].name.charAt(0)}`);
-*/
-
-for (let j = 0; j < teachers.length; j++) {
-    console.log(teachers[j].name.charAt(0));
-    if (teachers[j].name.charCodeAt(0) > teachers[j + 1].name.charCodeAt(0)) {
-        console.log("hi");
-    }
-}
+console.log(bubbleSortArrayExtra(teachers, 'name'));
+console.log(teachers);
